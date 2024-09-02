@@ -284,6 +284,7 @@ footer {
   }
   .para {
     padding: 14px;
+    font-size: 18px;
  
 }
   .h-1 {
@@ -301,7 +302,7 @@ h1{
 
 
   .container {
-
+width: 100%;
     margin: 40px auto;
     padding: 20px;
 
@@ -318,11 +319,7 @@ h1{
     margin-bottom: 10px;
   }
   
-  .para {
-    font-size: 18px;
-    
-   
-  }
+  
   #city{
     border-radius: 10px;
     border: none;
@@ -394,8 +391,8 @@ h1{
 }
 
 .para {
-    padding: 10px;
-    background-color: #f9f9f9;
+  
+  
 }
 
 .child-para {

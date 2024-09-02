@@ -23,19 +23,31 @@
 
         /* Navbar Styling */
         .navbar {
-            background: linear-gradient(90deg, #2c3e50, #4ca1af);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #ecf0f1;
-        }
+  font-size: 20px;
+  height: 10vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  color: #000000;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 0 0 18px black;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ecf0f1;
-        }
+        
+.logo {
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    font-size: 24px;
+    font-family: lato, sans-serif;
+    font-weight: 100;
+}
 
         .nav-links {
             list-style: none;
@@ -80,12 +92,15 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            position: relative;
+
         }
 
         .hamburger div {
-            width: 25px;
+            padding-right: 2px;
+            width: 10px;
             height: 3px;
-            background-color: #ecf0f1;
+            background-color: #090b0b;
             margin: 4px 0;
             transition: all 0.3s ease;
         }
@@ -238,6 +253,13 @@
         }
 
         @media (max-width: 650px) {
+            .hamburger {
+        display: flex;
+        position: relative;
+        right: 13px;
+        
+    }
+
             .nav-links {
                 display: none;
                 flex-direction: column;

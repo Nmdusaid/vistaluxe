@@ -13,7 +13,7 @@
             background-color: #f5f5f5;
             color: #333;
             font-size: 16px; /* Base font size */
-            padding-top: 60px; /* Adjust if the navbar height changes */
+          
         }
 
         .container {
@@ -24,24 +24,30 @@
 
         /* Navbar Styling */
         .navbar {
-            background: linear-gradient(90deg, #2c3e50, #2980b9);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #f39c12;
-            position: fixed;
-            width: 95%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+  font-size: 20px;
+  height: 10vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  color: #000000;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 0 0 18px black;
+}
 
-        .logo {
-            font-size: clamp(1.5rem, 2.5vw, 2rem);
-            font-weight: bold;
-            color: #ecf0f1;
-        }
+.logo {
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    font-size: 24px;
+    font-family: lato, sans-serif;
+    font-weight: 100;
+}
 
         .nav-links {
             list-style: none;
@@ -67,12 +73,13 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            padding-right: 10px;
         }
 
         .hamburger span {
             height: 3px;
             width: 25px;
-            background: #ecf0f1;
+            background: #0d0e0e;
             margin-bottom: 4px;
             border-radius: 5px;
         }
@@ -104,6 +111,7 @@
 
         /* Header */
         header {
+            
             background: linear-gradient(135deg, #2980b9, #8e44ad);
             color: #ecf0f1;
             padding: 50px;
