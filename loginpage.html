@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #5a67d8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4c51bf;
+        }
+
+        /* Form Containers */
+        .bg,
+        .bg1 {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Hiding and showing forms */
+        #signupForm,
+        #loginForm {
+            display: none;
+        }
+
+        /* Centering content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #home {
+            background-color: #2d3748;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #home:hover {
+            background-color: #1a202c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg" id="signupForm">
+            <h1 class="head">Sign Up</h1>
+            <input type="text" id="signupText" placeholder="Enter your name">
+            <input type="email" id="signupMail" placeholder="Enter your email">
+            <input type="password" id="signupPass" placeholder="Enter your password">
+            <button id="signupBtn">Sign Up</button>
+            <button id="switchToLoginBtn">Go to Login</button>
+        </div>
+
+        <div class="bg1" id="loginForm">
+            <h1 class="head">Log In</h1>
+            <input type="email" id="loginMail" placeholder="Enter your email">
+            <input type="password" id="loginPass" placeholder="Enter your password">
+            <button id="loginBtn">Log In</button>
+            <button id="switchToSignupBtn">Go to Sign Up</button>
+        </div>
+
+        <button id="home">Go to Home</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const switchToSignupBtn = document.getElementById('switchToSignupBtn');
+        const switchToLoginBtn = document.getElementById('switchToLoginBtn');
+        const homeBtn = document.getElementById('home');
+
+        // Initially show the sign-up form
+        signupForm.style.display = 'block';
+
+        // Switch between forms
+        switchToSignupBtn.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+
+        switchToLoginBtn.addEventListener('click', () => {
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+
+        homeBtn.addEventListener('click', () => {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>

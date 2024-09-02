@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Luxe - Services & Experiences</title>
+    <style>
+        /* Base Styling */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(90deg, #2c3e50, #4ca1af);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ecf0f1;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        .nav-links button {
+            background: #f39c12;
+            border: none;
+            padding: 8px 15px;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-links button:hover {
+            background: #e67e22;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ecf0f1;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Show menu when active */
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Content Sections */
+        .intro {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: #ecf0f1;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .service-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 45%;
+            padding: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        .testimonial-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            border-radius: 8px;
+        }
+
+        .testimonial-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .service-card {
+                flex: 1 1 100%;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .intro p {
+                font-size: 0.95rem;
+            }
+
+            .testimonial h4 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Vista&Luxe</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <section class="intro">
+            <h2>Experience Elegance & Luxury</h2>
+            <p>At Vista Luxe, our commitment is to offer world-class services combined with personalized care. Whether it’s the grandeur of our rooms or the exquisite dining experiences, every moment is crafted to make your stay unforgettable.</p>
+        </section>
+
+        <!-- Service Cards -->
+        <section class="service-section" id="services">
+            <div class="service-card">
+                <h3>Luxurious Rooms & Suites</h3>
+                <p>Immerse yourself in comfort with our thoughtfully designed rooms featuring elegant décor, premium amenities, and stunning views that define luxury living.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Exclusive Spa & Wellness</h3>
+                <p>Indulge in rejuvenation with our exclusive spa services. Our wellness programs are tailored to provide a serene retreat from the busy world.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Gourmet Dining</h3>
+                <p>Enjoy a fine dining experience that blends culinary artistry with local and global flavors. Each dish is crafted to tantalize your taste buds.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Personalized Hospitality</h3>
+                <p>Our staff is dedicated to providing you with personalized service that ensures your needs are met with warmth and attention to detail.</p>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial-section">
+            <h2>What Our Guests Say</h2>
+            <div class="testimonial">
+                <h4>John Doe</h4>
+                <p>"Staying at Vista Luxe was an amazing experience. The services were top-notch, and the staff was incredibly accommodating. Highly recommended!"</p>
+            </div>
+            <div class="testimonial">
+                <h4>Jane Smith</h4>
+                <p>"From the moment we arrived, we were treated like royalty. The rooms were stunning, and the food was simply out of this world. We'll be back for sure!"</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vista Luxe. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
